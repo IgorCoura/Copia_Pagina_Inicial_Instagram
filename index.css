@@ -2,15 +2,16 @@ body{
     text-align: center;
     background-color: rgb(243,243,243);
     font-family: sans-serif;
+    min-width: 100vh;
 }
 
 main{
     width: 100%;
-    min-height: 100vh;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
+    margin-top: 50px;
 }
 
 article{
@@ -38,8 +39,39 @@ article{
     position: relative;
 }
 
-.instagram-img-list img{
-    opacity: 1;
+.photo{
+    position: absolute;
+    opacity: 0;
+    animation-name: animacao;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animacao{
+    20%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
+
+.photo:nth-child(1){
+    animation-delay: 5s
+}
+.photo:nth-child(2){
+    animation-delay: 10s
+}
+.photo:nth-child(3){
+    animation-delay: 15s
+}
+.photo:nth-child(4){
+    animation-delay: 20s
+}
+
+
+.instagram-img-list img:first-child{
+    transition: 1s;
 }
 
 .instagram-group{
@@ -103,4 +135,23 @@ article{
     margin: 0;
     width: 40%;
     height: 40%;
+}
+
+footer{
+    margin: 100px;
+}
+
+footer a, p{
+    text-decoration: none;
+    color: rgb(163, 163, 163);
+    padding: 10px;
+    font-size: 11px;
+}
+
+.footer-2-line{
+    margin-top: 5px;
+}
+
+.footer-3-line{
+    margin: 10px
 }
